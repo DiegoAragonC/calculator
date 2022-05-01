@@ -60,6 +60,7 @@ function parseComputation(str) {
         } else {
             computation[compLen-1] += str;
         }
+        refreshDisplay(computation);
     } else if (str in operations) {
         if (compLen < 3) {
             if (computation[compLen-1] in operations) {
@@ -70,11 +71,14 @@ function parseComputation(str) {
         } else {
             computation = [compute(), str];
         }
+        refreshDisplay(computation);
     } else if (str == 'eq') {
-        computation = [compute()];
+        let result = compute();
+        refreshDisplay([result]);
+        computation = [result];
     }
     
-    refreshDisplay();
+
 }
 
 
@@ -89,10 +93,10 @@ function compute() {
 }
 
 
-function refreshDisplay() {
+function refreshDisplay(dispArray) {
     let disp = document.getElementById('display');
     let str = "";
-    for (let l of computation) {
+    for (let l of dispArray) {
         if (l in opSymbols) {
             str += " " + opSymbols[l];    
         } else {
@@ -105,7 +109,7 @@ function refreshDisplay() {
 
 function clearDisplay() {
     computation = [0];
-    refreshDisplay();
+    refreshDisplay(computation);
 }
 
 
