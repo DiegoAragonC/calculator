@@ -2,19 +2,27 @@
 <html>
     <head>
         <title>Calculator</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div id="calc">
             <div id="display"></div>
-            <div id="digits"></div>
-            <div id="operators">
-                <button class="op" id="add">+</button>
-                <button class="op" id="sub">-</button>
-                <button class="op" id="mult">*</button>
-                <button class="op" id="divi">/</button>
-                <button class="op" id="eq">=</button>                           
+            <div id="button-area">
+                <div id="left-buttons">
+                    <div id="digits"><button id="clr">clear</button></div>
+           
+                </div>
+                <div id="right-buttons">
+                    <div id="operators">
+                        <button class="op" id="add">+</button>
+                        <button class="op" id="sub">-</button>
+                        <button class="op" id="mult">*</button>
+                        <button class="op" id="divi">/</button>
+                        <button class="op" id="eq">=</button>                           
+                    </div>    
+                </div>
+              
             </div>
-            <button id="clr">clear</button>
         </div>
   
         <script src="script.js"></script>

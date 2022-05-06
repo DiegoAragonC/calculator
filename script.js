@@ -34,7 +34,7 @@ function setupButtons() {
         btn.classList.add('digit');
         btn.setAttribute('id', i);
         btn.textContent = i;
-        digits.appendChild(btn);
+        digits.insertBefore(btn, digits.firstChild);
         btn.addEventListener('click', () => parseComputation(btn.id));
     }
     // Op buttons
